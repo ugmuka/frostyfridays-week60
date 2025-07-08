@@ -1,0 +1,39 @@
+{
+    "name": "dbt Development Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.vscode-yaml",
+                "ms-vscode.vscode-json",
+                "Anthropic.claude-code",
+                "EditorConfig.EditorConfig",
+                "eamodio.gitlens",
+                "snowflake.snowflake-vsc"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "files.autoSave": "afterDelay"
+            }
+        }
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "make init",
+    "remoteUser": "vscode",
+    "workspaceFolder": "/workspaces/frostyfridays-week60",
+    "runArgs": ["--env-file",".env"]
+}

@@ -1,0 +1,7 @@
+[project]
+name = "frostyfridays-week60"
+version = "0.1.0"
+description = "frostyfridays-week60"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
