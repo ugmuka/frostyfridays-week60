@@ -1,5 +1,5 @@
 definition_version: 2
 env:
-  database: "DB_NAME"
-  schema: "PUBLIC"
+  database: "Y_MUKAI_DB"
+  schema: "FROSTYFRYDAY"
 
